@@ -762,7 +762,7 @@ class SEF:
                         os.chdir(storeto)
                         for f in file_list:
                             filename = f['filename']
-                            r = requests.get(url=DOWNLOAD_OUTPUT_FILE + f['fileid'] + '/', headers=unicore_apiget_oidc_auth())
+                            r = requests.get(url=DOWNLOAD_OUTPUT_FILE + f['fileid'] + '/', headers=unicore_api.get_oidc_auth())
                             if r.status_code == 200:
                                 download_file_nsg(filename, r)  
                         os.chdir("../../GUI")
